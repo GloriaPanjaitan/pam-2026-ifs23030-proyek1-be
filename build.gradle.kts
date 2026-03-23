@@ -38,6 +38,7 @@ dependencies {
     implementation("io.ktor:ktor-server-status-pages:3.4.0")
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    implementation("io.ktor:ktor-serialization-gson:${ktor_version}")
 
     // Add
     implementation("io.github.cdimascio:dotenv-kotlin:${dotenv_version}")

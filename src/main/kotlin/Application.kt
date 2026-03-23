@@ -4,7 +4,7 @@ import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
 import io.github.cdimascio.dotenv.dotenv
 import io.ktor.http.*
-import io.ktor.serialization.kotlinx.json.*
+import io.ktor.serialization.gson.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.auth.jwt.*
@@ -12,7 +12,7 @@ import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.response.*
-import kotlinx.serialization.json.Json
+
 import org.delcom.helpers.JWTConstants
 import org.delcom.helpers.configureDatabases
 import org.delcom.module.appModule
@@ -74,13 +74,9 @@ fun Application.module() {
     }
 
     install(ContentNegotiation) {
-        json(
-            Json {
-                explicitNulls = false
-                prettyPrint = true
-                ignoreUnknownKeys = true
-            }
-        )
+        gson {
+            setPrettyPrinting()
+        }
     }
 
     install(Koin) {
