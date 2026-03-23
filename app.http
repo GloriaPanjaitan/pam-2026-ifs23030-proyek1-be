@@ -1,10 +1,6 @@
 ### Base URL
 @baseUrl = https://pam-2026-ifs23030-proyek1-be.ifs23030.space:8080/
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZWxjb20tdXNlciIsImlzcyI6ImRlbGNvbS1hcHAiLCJ1c2VySWQiOiJiYWQ5ZGExMy01OTdmLTQzOWEtYmVmYS0yM2ZmMzI4NDg3MGEiLCJleHAiOjE3NzQyNjkzNTV9.aFsUW9RcJeIp4ddkRacNGKn9ahIk9AjjV9FG2AwDNmI
-## =====================
-### AUTH
-### =====================
-
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZWxjb20tdXNlciIsImlzcyI6ImRlbGNvbS1hcHAiLCJ1c2VySWQiOiJiYWQ5ZGExMy01OTdmLTQzOWEtYmVmYS0yM2ZmMzI4NDg3MGEiLCJleHAiOjE3NzQyNzE2MTZ9.6KtbfJb6NAe2XlVb5Fd64-pqAR6gN6F_d0bkZy3ymcc
 
 ### Register
 POST {{baseUrl}}/auth/register

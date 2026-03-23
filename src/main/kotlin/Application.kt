@@ -76,6 +76,14 @@ fun Application.module() {
     install(ContentNegotiation) {
         gson {
             setPrettyPrinting()
+            registerTypeAdapter(java.time.Instant::class.java, object : com.google.gson.TypeAdapter<java.time.Instant>() {
+                override fun write(out: com.google.gson.stream.JsonWriter, value: java.time.Instant?) {
+                    out.value(value?.toString())
+                }
+                override fun read(input: com.google.gson.stream.JsonReader): java.time.Instant? {
+                    return java.time.Instant.parse(input.nextString())
+                }
+            })
         }
     }
 
