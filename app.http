@@ -1,5 +1,6 @@
 ### Base URL
 @baseUrl = https://pam-2026-ifs23030-proyek1-be.ifs23030.space:8080/
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZWxjb20tdXNlciIsImlzcyI6ImRlbGNvbS1hcHAiLCJ1c2VySWQiOiJlMTE4OGM0OS03NDMxLTQ0YjEtYWQ4MS1iNDA3ZGVkOWU2ODAiLCJleHAiOjE3NzQyNTg5NDZ9.5-n2y-TGJ_QAegVDzS48VtSjvCmdnrBAe_suC053gc8
 ### =====================
 ### AUTH
 ### =====================
@@ -22,8 +23,8 @@ POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
 {
-  "username": "test",
-  "password": "test"
+  "username": "adminblog",
+  "password": "password123"
 }
 
 ###
