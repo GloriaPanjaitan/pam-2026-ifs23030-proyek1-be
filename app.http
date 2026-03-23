@@ -1,0 +1,244 @@
+### Base URL
+@baseUrl = http://localhost:8000
+#@baseUrl = https://projectmini.ayam.blog:8080
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZWxjb20tdXNlciIsImlzcyI6ImRlbGNvbS1hcHAiLCJ1c2VySWQiOiJiODJhYmNhOC1lYTk4LTQ1NTgtYjQ4OC1jNDA4NGI5NTFkYzUiLCJleHAiOjE3NzQwMjU0MjB9.jUSzw2GpAEbBteMnEQqJ5aHi0VxZinPOIBGGDdUDjec
+#@refreshToken = 68e8ea2b-ff12-40a3-9f9a-453d89546799
+
+### =====================
+### AUTH
+### =====================
+
+### Register
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Admin Blog",
+  "username": "adminblog",
+  "password": "password123",
+  "newPassword": ""
+}
+
+###
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+###
+
+### Refresh Token
+POST {{baseUrl}}/auth/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}",
+  "authToken": "{{authToken}}"
+}
+
+###
+
+### Logout
+POST {{baseUrl}}/auth/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}",
+  "authToken": "{{authToken}}"
+}
+
+### =====================
+### USER
+### =====================
+
+### Get Me
+GET {{baseUrl}}/users/me
+Authorization: Bearer {{authToken}}
+
+###
+
+### Update Me
+PUT {{baseUrl}}/users/me
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "name": "Admin Blog Updated",
+  "username": "adminblog",
+  "password": "password123",
+  "newPassword": "newpassword123"
+}
+
+###
+
+### Delete Me
+DELETE {{baseUrl}}/users/me
+Authorization: Bearer {{authToken}}
+
+### =====================
+### CATEGORY
+### =====================
+
+### Get All Categories
+GET {{baseUrl}}/categories
+Authorization: Bearer {{authToken}}
+
+###
+
+### Get Category By Id
+GET {{baseUrl}}/categories/{{categoryId}}
+Authorization: Bearer {{authToken}}
+
+###
+
+### Create Category
+POST {{baseUrl}}/categories
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "name": "Technology",
+  "description": "Artikel seputar teknologi"
+}
+
+###
+
+### Update Category
+PUT {{baseUrl}}/categories/{{categoryId}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "name": "Technology Updated",
+  "description": "Artikel seputar teknologi terbaru"
+}
+
+###
+
+### Delete Category
+DELETE {{baseUrl}}/categories/{{categoryId}}
+Authorization: Bearer {{authToken}}
+
+### =====================
+### ARTICLE
+### =====================
+
+### Get All Articles
+GET {{baseUrl}}/articles
+Authorization: Bearer {{authToken}}
+
+###
+
+### Get Article By Id
+GET {{baseUrl}}/articles/{{articleId}}
+Authorization: Bearer {{authToken}}
+
+###
+
+### Get Articles By Category
+GET {{baseUrl}}/articles/category/{{categoryId}}
+Authorization: Bearer {{authToken}}
+
+###
+
+### Create Article
+POST {{baseUrl}}/articles
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "title": "Mengenal Kotlin Ktor",
+  "content": "Ktor adalah framework Kotlin untuk membangun aplikasi backend...",
+  "thumbnail": null,
+  "isPublished": true,
+  "categoryId": "6e5dded1-8a13-4446-8fcd-c9b66c7a1d00"
+}
+
+###
+
+### Update Article
+PUT {{baseUrl}}/articles/{{articleId}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "title": "Mengenal Kotlin Ktor - Updated",
+  "content": "Ktor adalah framework modern untuk backend Kotlin...",
+  "thumbnail": null,
+  "isPublished": true,
+  "categoryId": "{{categoryId}}"
+}
+
+###
+
+### Delete Article
+DELETE {{baseUrl}}/articles/{{articleId}}
+Authorization: Bearer {{authToken}}
+
+
+
+### Upload Thumbnail Article
+PUT {{baseUrl}}/articles/0ad213ab-a51d-4ef6-81ca-47e2d3a5d5bc/thumbnail
+Authorization: Bearer {{authToken}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="thumbnail"; filename="image.jpg"
+Content-Type: image/jpg
+
+< ./imageg.jpg
+--boundary--
+
+###
+
+### Get Thumbnail Article
+GET {{baseUrl}}/images/articles/{{articleId}}
+Authorization: Bearer {{authToken}}
+### =====================
+### COMMENT
+### =====================
+
+### Get Comments By Article
+GET {{baseUrl}}/comments/article/{{articleId}}
+Authorization: Bearer {{authToken}}
+
+###
+
+### Get Comment By Id
+GET {{baseUrl}}/comments/{{commentId}}
+Authorization: Bearer {{authToken}}
+
+###
+
+### Create Comment
+POST {{baseUrl}}/comments
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "content": "Artikel yang sangat informatif!",
+  "articleId": "{{articleId}}"
+}
+
+###
+
+### Update Comment
+PUT {{baseUrl}}/comments/{{commentId}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "content": "Artikel yang sangat informatif dan bermanfaat!",
+  "articleId": "{{articleId}}"
+}
+
+###
+
+### Delete Comment
+DELETE {{baseUrl}}/comments/{{commentId}}
+Authorization: Bearer {{authToken}}
