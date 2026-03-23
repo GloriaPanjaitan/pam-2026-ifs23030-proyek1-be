@@ -1,6 +1,6 @@
 ### Base URL
-@baseUrl = https://pam-2026-ifs23030-proyek1-be.ifs23030.space:8080
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZWxjb20tdXNlciIsImlzcyI6ImRlbGNvbS1hcHAiLCJ1c2VySWQiOiJlMTE4OGM0OS03NDMxLTQ0YjEtYWQ4MS1iNDA3ZGVkOWU2ODAiLCJleHAiOjE3NzQyNjAzMjV9.mTjsg--cc6F1xz8PR-yRO88SZOVEdSKwZxUmIRcwQm0
+@baseUrl = https://pam-2026-ifs23030-proyek1-be.ifs23030.space:8080/
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZWxjb20tdXNlciIsImlzcyI6ImRlbGNvbS1hcHAiLCJ1c2VySWQiOiJiYWQ5ZGExMy01OTdmLTQzOWEtYmVmYS0yM2ZmMzI4NDg3MGEiLCJleHAiOjE3NzQyNjkzNTV9.aFsUW9RcJeIp4ddkRacNGKn9ahIk9AjjV9FG2AwDNmI
 ## =====================
 ### AUTH
 ### =====================
@@ -24,8 +24,8 @@ POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
 {
-  "username": "adminblog",
-  "password": "password123"
+  "username": "golo",
+  "password": "Golo123."
 }
 
 ###
