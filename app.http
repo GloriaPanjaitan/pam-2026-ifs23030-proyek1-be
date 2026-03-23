@@ -1,9 +1,5 @@
 ### Base URL
-@baseUrl = http://localhost:8000
-#@baseUrl = https://projectmini.ayam.blog:8080
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZWxjb20tdXNlciIsImlzcyI6ImRlbGNvbS1hcHAiLCJ1c2VySWQiOiJiODJhYmNhOC1lYTk4LTQ1NTgtYjQ4OC1jNDA4NGI5NTFkYzUiLCJleHAiOjE3NzQwMjU0MjB9.jUSzw2GpAEbBteMnEQqJ5aHi0VxZinPOIBGGDdUDjec
-#@refreshToken = 68e8ea2b-ff12-40a3-9f9a-453d89546799
-
+@baseUrl = https://pam-2026-ifs23030-proyek1-be.ifs23030.space:8080/
 ### =====================
 ### AUTH
 ### =====================

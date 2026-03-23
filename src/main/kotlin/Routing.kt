@@ -54,7 +54,7 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
-            call.respondText("Jarvis : Api blog bos Gloria telah berjalan.")
+            call.respondText("Jarvis : Blog Api bos Gloria telah berjalan.")
         }
 
         // Route Auth
